@@ -1,0 +1,560 @@
+:root {
+  --primary-color: #212121;
+  --bg: #2f303a;
+  --bg-second: #f5f4fa;
+  --highlight: #ffffff;
+  --lowlight: #000000;
+  --logo-first-part-color: #2196f3;
+  --logo-second-part-color: var(--lowlight);
+  --logo-second-part-color-alternative: var(--highlight);
+  --hover-color: var(--logo-first-part-color);
+  --focus-color: var(--logo-first-part-color);
+  --desciption: #757575;
+  --phone-mail-header-color: var(--desciption);
+  --phone-mail-foother-color: rgba(255, 255, 255, 0.6);
+  --button-shadow: rgba(0, 0, 0, 0.15);
+  --box-shadow-1: rgba(0, 0, 0, 0.1);
+  --box-shadow-2: rgba(0, 0, 0, 0.08);
+  --box-shadow-3: rgba(0, 0, 0, 0.12);
+  --bg-inside-button: var(--bg-second);
+}
+
+body {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  color: var(--primary-color);
+}
+
+p {
+  margin: 0 auto;
+  padding: 0;
+}
+h1 {
+  margin: 0 auto;
+  padding: 0;
+}
+h2 {
+  margin: 0 auto;
+  padding: 0;
+}
+h3 {
+  margin: 0 auto;
+  padding: 0;
+}
+h4 {
+  margin: 0 auto;
+  padding: 0;
+}
+h5 {
+  margin: 0 auto;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+header {
+  border-bottom: 1px solid #e5e5e5;
+}
+.m-zero {
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 94px 0;
+}
+
+.container-header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.container-solutions {
+  margin: auto;
+  padding-top: 212px;
+  padding-bottom: 188px;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/background-image.jpg');
+  background-size: 100%;
+  max-width: 1600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.container-what-we-do {
+  padding-top: 0;
+}
+.container-our-team {
+  background: var(--bg-second);
+}
+
+.container-portfolio {
+  padding-top: 50px;
+}
+
+.footer-container {
+  background: var(--bg);
+  padding: 60px 0;
+}
+
+/* usunięcie podkreśleń w odnośnikach */
+.non-decoration {
+  text-decoration: none;
+}
+
+/* definicja czcionki napisu WebStudio oraz barwy pierwszej cześci tego napisu */
+.logo {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.192;
+  letter-spacing: 0.03em;
+  color: var(--logo-first-part-color);
+}
+
+/* definicja barwy drugiej cześci napisu WebStudio umieszczonego w nagłówku strony */
+.logo-second-part {
+  color: var(--logo-second-part-color);
+}
+
+/* definicja barwy drugiej cześci napisu WebStudio umieszczonego w stopce strony */
+.logo-second-part-alternative {
+  color: var(--logo-second-part-color-alternative);
+}
+
+.main-menu {
+  display: flex;
+  margin-left: 93px;
+}
+
+.main-menu > .item:not(:last-child) {
+  margin-right: 46px;
+}
+
+.portfolio-menu {
+  display: flex;
+  margin-top: 174px;
+  justify-content: center;
+}
+.portfolio-menu > .item:not(:last-child) {
+  margin-right: 8px;
+}
+
+/* kolorystyka linków w nawigacji */
+.main-menu .link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.02em;
+  color: var(--primary-color);
+}
+.main-menu .link:hover {
+  color: var(--hover-color);
+}
+.main-menu .link:focus {
+  color: var(--focus-color);
+}
+
+.header-phone-email {
+  display: flex;
+  margin-left: 345px;
+}
+
+.header-phone-email .link {
+  display: flex;
+  align-items: center;
+}
+
+.header-phone-email > .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.solutions-text-field {
+  max-width: 696px;
+  display: block;
+  margin: 0 auto;
+}
+
+.gird-solutions {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.gird-solutions .item {
+  flex-basis: calc((100% - 3 * 30px) / 4);
+}
+.gird-what-we-do {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.gird-what-we-do .item {
+  flex-basis: calc((100% - 2 * 30px) / 3);
+}
+
+.gird-our-team {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.gird-our-team .item {
+  flex-basis: calc((100% - 3 * 30px) / 4);
+  max-width: 270px;
+}
+
+.gird-porfolio {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.gird-portfolio .item {
+  flex-basis: calc((100% - 2 * 30px) / 3);
+  max-width: 370px;
+}
+
+/* definicja czcionki telefonu i e-maila w nagłówku strony */
+.header-phone-email .link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.02em;
+  color: var(--phone-mail-header-color);
+}
+/* reakcja linków telefon i e-mail w nagłówku strony */
+.header-phone-email > .item:hover * {
+  color: var(--hover-color);
+  fill: var(--focus-color);
+}
+.header-phone-email > .link:focus * {
+  color: var(--focus-color);
+  fill: var(--focus-color);
+}
+
+/* kolorystyka linków telefon i e-mail w stopce strony */
+.footer-phone-email .link {
+  color: var(--phone-mail-foother-color);
+}
+.footer-phone-email .link:hover {
+  color: var(--hover-color);
+}
+.footer-phone-email .link:focus {
+  color: var(--focus-color);
+}
+
+/* definicje czcionek do opisów */
+.description {
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  color: var(--desciption);
+}
+
+.team-members-specialties {
+  font-size: 16px;
+  line-height: 1.188;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--desciption);
+}
+.team-members-specialties .item {
+  background: var(--highlight);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-type-project {
+  font-size: 16px;
+  line-height: 1.875;
+  letter-spacing: 0.03em;
+  color: var(--desciption);
+}
+.portfolio-type-project .item {
+  border-bottom: 1px solid #eeeeee;
+}
+/* tło wykorzystywane na stronie głównej i stopce */
+.background {
+  background: var(--bg);
+}
+.background-second {
+  background: var(--bg-second);
+}
+/* definicja przycisku "Zamów usługę" */
+.button-zu {
+  background-color: var(--bg-inside-button);
+  border: none;
+  padding: 10px 42px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 30px auto 0px;
+}
+.button-zu:hover {
+  background: var(--hover-color);
+  box-shadow: 0px 4px 4px var(--button-shadow);
+  color: var(--highlight);
+}
+.button-zu:focus {
+  background: var(--focus-color);
+  box-shadow: 0px 4px 4px var(--button-shadow);
+  color: var(--highlight);
+}
+
+/* definicja czcionki użytej w filtrze "Porfolio" */
+.button-po {
+  background-color: var(--bg-inside-button);
+  border: none;
+  padding: 6px 22px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.625;
+  letter-spacing: 0.03em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button-po:hover {
+  background: var(--hover-color);
+  box-shadow: 0px 3px 1px var(--box-shadow-1), 0px 1px 2px var(--box-shadow-2),
+    0px 2px 2px var(--box-shadow-3);
+  color: var(--highlight);
+}
+.button-po:focus {
+  background: var(--focus-color);
+  box-shadow: 0px 3px 1px var(--box-shadow-1), 0px 1px 2px var(--box-shadow-2),
+    0px 2px 2px var(--box-shadow-3);
+  color: var(--highlight);
+}
+
+/* ustawienia użytych na stronie nagłówków */
+.for-your-business {
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.363;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--highlight);
+}
+.our-team-and-what-we-do {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.167;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+.points-description {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+.names-team-members {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.188;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--primary-color);
+  margin-top: 30px;
+}
+
+.names-team-members-descirption {
+  margin: 10px auto 0px;
+}
+
+.portfolio-name-project {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--primary-color);
+  margin: 20px 24px 0px;
+}
+
+.portfolio-project-description {
+  margin: 4px 24px 20px;
+}
+
+.portfolio-type-project .item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+/* parametry danych adresowych w stopce */
+.address-footer {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  color: var(--highlight);
+  margin-top: 10px;
+}
+
+.join-to-us {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--highlight);
+  margin-bottom: 10px;
+}
+
+.icon-header {
+  margin-right: 10px;
+}
+.box-points-description {
+  background-color: var(--bg-second);
+  width: 270px;
+  height: 120px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+
+.our-team-contact {
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.our-team-contact .link:hover * {
+  background-color: var(--hover-color);
+}
+.our-team-contact .link:focus * {
+  background-color: var(--focus-color);
+}
+
+.our-team-contact .item {
+  box-shadow: none;
+}
+.our-team-contact > .item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.contact-team-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-our-clients {
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-our-clients,
+.icon-sm-our-team {
+  fill: #afb1b8;
+}
+
+.gird-our-clients .link:hover * {
+  border-color: var(--hover-color);
+  fill: var(--focus-color);
+}
+.gird-our-clients .link:focus * {
+  border-color: var(--hover-color);
+  fill: var(--focus-color);
+}
+
+.gird-our-clients {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.gird-our-clients .item {
+  flex-basis: calc((100% - 5 * 30px) / 6);
+}
+
+.join-to-us-contact {
+  margin-top: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: left;
+}
+
+.join-to-us-contact .link:hover * {
+  background-color: var(--hover-color);
+}
+.join-to-us-contact .link:focus * {
+  background-color: var(--focus-color);
+}
+
+.join-to-us-contact .item {
+  box-shadow: none;
+}
+.join-to-us-contact > .item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.join-to-us-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.icon-white {
+  fill: var(--highlight);
+}
+
+.icon-smartphone-envelope {
+  fill: #757575;
+  margin-right: 10px;
+}
+
+.footer-flex {
+  display: flex;
+}
+
+.join-to-us-section {
+  margin-left: 70px;
+  padding-top: 12px;
+}
