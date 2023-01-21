@@ -634,6 +634,7 @@ header {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  cursor: pointer;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
