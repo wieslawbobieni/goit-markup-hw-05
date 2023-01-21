@@ -17,6 +17,7 @@
   --box-shadow-2: rgba(0, 0, 0, 0.08);
   --box-shadow-3: rgba(0, 0, 0, 0.12);
   --bg-inside-button: var(--bg-second);
+  --transition-main: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -150,17 +151,39 @@ header {
 
 /* kolorystyka linków w nawigacji */
 .main-menu .link {
+  position: relative;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.143;
   letter-spacing: 0.02em;
   color: var(--primary-color);
 }
-.main-menu .link:hover {
+.main-menu .link:hover,
+.main-menu .link:focus,
+.header-phone-email .item:hover *,
+.header-phone-email .link:focus *,
+.header-phone-email .link:focus,
+.footer-phone-email .link:hover,
+.footer-phone-email .link:focus {
   color: var(--hover-color);
+  fill: var(--hover-color);
+  transition: var(--transition-main);
 }
-.main-menu .link:focus {
-  color: var(--focus-color);
+
+.main-menu .link::after {
+  content: '';
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: -28px;
+  width: 53px;
+  height: 4px;
+  background: #2196f3;
+  border-radius: 2px;
+}
+.main-menu .link-active::after {
+  display: block;
+  transition: var(--transition-main);
 }
 
 .header-phone-email {
@@ -242,25 +265,10 @@ header {
   letter-spacing: 0.02em;
   color: var(--phone-mail-header-color);
 }
-/* reakcja linków telefon i e-mail w nagłówku strony */
-.header-phone-email > .item:hover * {
-  color: var(--hover-color);
-  fill: var(--focus-color);
-}
-.header-phone-email > .link:focus * {
-  color: var(--focus-color);
-  fill: var(--focus-color);
-}
 
 /* kolorystyka linków telefon i e-mail w stopce strony */
 .footer-phone-email .link {
   color: var(--phone-mail-foother-color);
-}
-.footer-phone-email .link:hover {
-  color: var(--hover-color);
-}
-.footer-phone-email .link:focus {
-  color: var(--focus-color);
 }
 
 /* definicje czcionek do opisów */
@@ -273,7 +281,7 @@ header {
 
 .team-members-specialties {
   font-size: 16px;
-  line-height: 1.188;
+  line-height: 1.18;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--desciption);
@@ -316,15 +324,12 @@ header {
   display: block;
   margin: 30px auto 0px;
 }
-.button-zu:hover {
+.button-zu:hover,
+.button-zu:focus {
   background: var(--hover-color);
   box-shadow: 0px 4px 4px var(--button-shadow);
   color: var(--highlight);
-}
-.button-zu:focus {
-  background: var(--focus-color);
-  box-shadow: 0px 4px 4px var(--button-shadow);
-  color: var(--highlight);
+  transition: var(--transition-main);
 }
 
 /* definicja czcionki użytej w filtrze "Porfolio" */
@@ -340,17 +345,13 @@ header {
   border-radius: 4px;
   cursor: pointer;
 }
-.button-po:hover {
+.button-po:hover,
+.button-po:focus {
   background: var(--hover-color);
   box-shadow: 0px 3px 1px var(--box-shadow-1), 0px 1px 2px var(--box-shadow-2),
     0px 2px 2px var(--box-shadow-3);
   color: var(--highlight);
-}
-.button-po:focus {
-  background: var(--focus-color);
-  box-shadow: 0px 3px 1px var(--box-shadow-1), 0px 1px 2px var(--box-shadow-2),
-    0px 2px 2px var(--box-shadow-3);
-  color: var(--highlight);
+  transition: var(--transition-main);
 }
 
 /* ustawienia użytych na stronie nagłówków */
@@ -409,6 +410,7 @@ header {
 .portfolio-type-project .item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: var(--transition-main);
 }
 /* parametry danych adresowych w stopce */
 .address-footer {
@@ -420,14 +422,14 @@ header {
   margin-top: 10px;
 }
 
-.join-to-us {
+.join-to-us-text,
+.what-we-do-text {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.143;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--highlight);
-  margin-bottom: 10px;
 }
 
 .icon-header {
@@ -450,11 +452,10 @@ header {
   justify-content: center;
 }
 
-.our-team-contact .link:hover * {
-  background-color: var(--hover-color);
-}
+.our-team-contact .link:hover *,
 .our-team-contact .link:focus * {
-  background-color: var(--focus-color);
+  background-color: var(--hover-color);
+  transition: var(--transition-main);
 }
 
 .our-team-contact .item {
@@ -489,13 +490,11 @@ header {
   fill: #afb1b8;
 }
 
-.gird-our-clients .link:hover * {
-  border-color: var(--hover-color);
-  fill: var(--focus-color);
-}
+.gird-our-clients .link:hover *,
 .gird-our-clients .link:focus * {
   border-color: var(--hover-color);
   fill: var(--focus-color);
+  transition: var(--transition-main);
 }
 
 .gird-our-clients {
@@ -517,11 +516,10 @@ header {
   justify-content: left;
 }
 
-.join-to-us-contact .link:hover * {
-  background-color: var(--hover-color);
-}
+.join-to-us-contact .link:hover *,
 .join-to-us-contact .link:focus * {
-  background-color: var(--focus-color);
+  background-color: var(--hover-color);
+  transition: var(--transition-main);
 }
 
 .join-to-us-contact .item {
@@ -557,4 +555,97 @@ header {
 .join-to-us-section {
   margin-left: 70px;
   padding-top: 12px;
+}
+
+.thumb {
+  position: relative;
+  height: 294px;
+}
+.what-we-do-stripe {
+  position: absolute;
+  bottom: 0;
+  background: rgba(47, 48, 58, 0.8);
+  height: 70px;
+  width: 370px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  position: relative;
+  overflow: hidden;
+  width: 370px;
+  height: 294px;
+}
+
+.overlight {
+  position: absolute;
+  background: rgba(33, 150, 243, 0.9);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: var(--transition-main);
+}
+
+.box:hover .overlight {
+  transform: translateY(0);
+}
+
+.box-overlight-text {
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.556;
+  letter-spacing: 0.03em;
+  color: var(--highlight);
+  margin: 49px 45px 49px 24px;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+.modal-window {
+  position: relative;
+  width: 528px;
+  height: 581px;
+  background-color: var(--highlight);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-close-button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-close-button-icon {
+  top: 9px;
+  right: 9px;
+}
+
+.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--transition-main);
 }
